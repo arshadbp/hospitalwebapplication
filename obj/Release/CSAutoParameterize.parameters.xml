@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DoctorDBContext-Web.config Connection String" description="DoctorDBContext Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/HospitalModel.csdl|res://*/HospitalModel.ssdl|res://*/HospitalModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;Server=tcp:demo1213.database.windows.net,1433;Initial Catalog=DoctorDatabase;Persist Security Info=False;User ID=demo1;Password=!@cmplex@133Abs;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\aneesa\ satti\\Documents\\visual\ studio\ 2015\\Projects\\DoctorWebApi\\DoctorWebApi\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DoctorDBContext']/@connectionString" />
+  </parameter>
+</parameters>

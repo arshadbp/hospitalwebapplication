@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DoctorDatabaseModelStoreContainer" CdmEntityContainer="DoctorDBContext">
+    <EntitySetMapping Name="GPDetails">
+      <EntityTypeMapping TypeName="DoctorDatabaseModel.GPDetail">
+        <MappingFragment StoreEntitySet="GPDetail">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="GPCode" ColumnName="GPCode" />
+          <ScalarProperty Name="GPSurname" ColumnName="GPSurname" />
+          <ScalarProperty Name="GPInitials" ColumnName="GPInitials" />
+          <ScalarProperty Name="GPPhone" ColumnName="GPPhone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patients">
+      <EntityTypeMapping TypeName="DoctorDatabaseModel.Patient">
+        <MappingFragment StoreEntitySet="Patient">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PassNumber" ColumnName="PassNumber" />
+          <ScalarProperty Name="ForeNames" ColumnName="ForeNames" />
+          <ScalarProperty Name="SurName" ColumnName="SurName" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="HomeTelephoneNumber" ColumnName="HomeTelephoneNumber" />
+          <ScalarProperty Name="GeneralPartitioner" ColumnName="GeneralPartitioner" />
+          <ScalarProperty Name="NOKName" ColumnName="NOKName" />
+          <ScalarProperty Name="relationShip" ColumnName="relationShip" />
+          <ScalarProperty Name="NOKAddress1" ColumnName="NOKAddress1" />
+          <ScalarProperty Name="NOKAddress2" ColumnName="NOKAddress2" />
+          <ScalarProperty Name="NOKAddress3" ColumnName="NOKAddress3" />
+          <ScalarProperty Name="NOKAddress4" ColumnName="NOKAddress4" />
+          <ScalarProperty Name="Isdeleted" ColumnName="Isdeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

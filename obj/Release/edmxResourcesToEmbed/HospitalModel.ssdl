@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DoctorDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="GPDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GPCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="GPSurname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="GPInitials" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="GPPhone" Type="nvarchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Patient">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PassNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ForeNames" Type="nvarchar" MaxLength="50" />
+    <Property Name="SurName" Type="nvarchar" MaxLength="50" />
+    <Property Name="DateOfBirth" Type="datetime" Nullable="false" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="HomeTelephoneNumber" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="GeneralPartitioner" Type="int" Nullable="false" />
+    <Property Name="NOKName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="relationShip" Type="varchar" MaxLength="50" />
+    <Property Name="NOKAddress1" Type="varchar" MaxLength="150" />
+    <Property Name="NOKAddress2" Type="varchar" MaxLength="150" />
+    <Property Name="NOKAddress3" Type="varchar" MaxLength="150" />
+    <Property Name="NOKAddress4" Type="varchar" MaxLength="150" />
+    <Property Name="Isdeleted" Type="bit" />
+  </EntityType>
+  <Association Name="FK_GPDetail_GPDetail">
+    <End Role="GPDetail" Type="Self.GPDetail" Multiplicity="1" />
+    <End Role="GPDetail1" Type="Self.GPDetail" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="GPDetail">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GPDetail1">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DoctorDatabaseModelStoreContainer">
+    <EntitySet Name="GPDetail" EntityType="Self.GPDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Patient" EntityType="Self.Patient" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_GPDetail_GPDetail" Association="Self.FK_GPDetail_GPDetail">
+      <End Role="GPDetail" EntitySet="GPDetail" />
+      <End Role="GPDetail1" EntitySet="GPDetail" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
